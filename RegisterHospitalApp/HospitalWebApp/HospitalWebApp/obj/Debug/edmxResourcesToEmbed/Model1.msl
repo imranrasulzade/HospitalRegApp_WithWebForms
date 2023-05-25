@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HospitalRegisterModelStoreContainer" CdmEntityContainer="HospitalRegisterEntities">
+    <EntitySetMapping Name="Admins">
+      <EntityTypeMapping TypeName="HospitalRegisterModel.Admin">
+        <MappingFragment StoreEntitySet="Admin">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Patients">
+      <EntityTypeMapping TypeName="HospitalRegisterModel.Patient">
+        <MappingFragment StoreEntitySet="Patient">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="surname" ColumnName="surname" />
+          <ScalarProperty Name="phone_number" ColumnName="phone_number" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="birthday" ColumnName="birthday" />
+          <ScalarProperty Name="med_department" ColumnName="med_department" />
+          <ScalarProperty Name="admit_date" ColumnName="admit_date" />
+          <ScalarProperty Name="register_date" ColumnName="register_date" />
+          <ScalarProperty Name="note" ColumnName="note" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

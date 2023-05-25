@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HospitalRegisterModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Patient">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="surname" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="phone_number" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="gender" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="birthday" Type="DateTime" Precision="0" />
+    <Property Name="med_department" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="admit_date" Type="DateTime" Precision="0" />
+    <Property Name="register_date" Type="DateTime" Precision="0" />
+    <Property Name="note" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="Boolean" />
+  </EntityType>
+  <EntityContainer Name="HospitalRegisterEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Admins" EntityType="Self.Admin" />
+    <EntitySet Name="Patients" EntityType="Self.Patient" />
+  </EntityContainer>
+</Schema>

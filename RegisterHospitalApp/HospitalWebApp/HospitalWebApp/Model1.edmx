@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="HospitalRegisterModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="username" Type="varchar" MaxLength="20" />
+          <Property Name="password" Type="varchar" MaxLength="50" />
+          <Property Name="status" Type="bit" />
+        </EntityType>
+        <EntityType Name="Patient">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="15" />
+          <Property Name="surname" Type="varchar" MaxLength="20" />
+          <Property Name="phone_number" Type="varchar" MaxLength="20" />
+          <Property Name="email" Type="varchar" MaxLength="40" />
+          <Property Name="gender" Type="varchar" MaxLength="10" />
+          <Property Name="birthday" Type="date" />
+          <Property Name="med_department" Type="varchar" MaxLength="50" />
+          <Property Name="admit_date" Type="date" />
+          <Property Name="register_date" Type="date" />
+          <Property Name="note" Type="varchar" MaxLength="60" />
+          <Property Name="status" Type="bit" />
+        </EntityType>
+        <EntityContainer Name="HospitalRegisterModelStoreContainer">
+          <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Patient" EntityType="Self.Patient" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="HospitalRegisterModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Patient">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="surname" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="phone_number" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="gender" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="birthday" Type="DateTime" Precision="0" />
+          <Property Name="med_department" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="admit_date" Type="DateTime" Precision="0" />
+          <Property Name="register_date" Type="DateTime" Precision="0" />
+          <Property Name="note" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="Boolean" />
+        </EntityType>
+        <EntityContainer Name="HospitalRegisterEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Admins" EntityType="Self.Admin" />
+          <EntitySet Name="Patients" EntityType="Self.Patient" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="HospitalRegisterModelStoreContainer" CdmEntityContainer="HospitalRegisterEntities">
+          <EntitySetMapping Name="Admins">
+            <EntityTypeMapping TypeName="HospitalRegisterModel.Admin">
+              <MappingFragment StoreEntitySet="Admin">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Patients">
+            <EntityTypeMapping TypeName="HospitalRegisterModel.Patient">
+              <MappingFragment StoreEntitySet="Patient">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="surname" ColumnName="surname" />
+                <ScalarProperty Name="phone_number" ColumnName="phone_number" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="birthday" ColumnName="birthday" />
+                <ScalarProperty Name="med_department" ColumnName="med_department" />
+                <ScalarProperty Name="admit_date" ColumnName="admit_date" />
+                <ScalarProperty Name="register_date" ColumnName="register_date" />
+                <ScalarProperty Name="note" ColumnName="note" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HospitalRegisterModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="username" Type="varchar" MaxLength="20" />
+    <Property Name="password" Type="varchar" MaxLength="50" />
+    <Property Name="status" Type="bit" />
+  </EntityType>
+  <EntityType Name="Patient">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="15" />
+    <Property Name="surname" Type="varchar" MaxLength="20" />
+    <Property Name="phone_number" Type="varchar" MaxLength="20" />
+    <Property Name="email" Type="varchar" MaxLength="40" />
+    <Property Name="gender" Type="varchar" MaxLength="10" />
+    <Property Name="birthday" Type="date" />
+    <Property Name="med_department" Type="varchar" MaxLength="50" />
+    <Property Name="admit_date" Type="date" />
+    <Property Name="register_date" Type="date" />
+    <Property Name="note" Type="varchar" MaxLength="60" />
+    <Property Name="status" Type="bit" />
+  </EntityType>
+  <EntityContainer Name="HospitalRegisterModelStoreContainer">
+    <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Patient" EntityType="Self.Patient" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
